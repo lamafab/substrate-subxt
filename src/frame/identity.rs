@@ -5,7 +5,6 @@ use codec::Encode;
 
 pub use pallet_identity::{
     Registration,
-
 };
 
 /// The subset of the `frame::Trait` that a client must implement.
