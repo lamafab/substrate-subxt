@@ -153,6 +153,7 @@ use crate::{
             Contracts,
             ContractsEventTypeRegistry,
         },
+        identity::Identity,
         session::{
             Session,
             SessionEventTypeRegistry,
@@ -192,6 +193,8 @@ pub trait Runtime: System + Sized + Send + Sync + 'static {
 /// definition MUST be used to ensure type compatibility.
 #[derive(Debug, Clone, Eq, PartialEq)]
 pub struct DefaultNodeRuntime;
+
+impl Identity for DefaultNodeRuntime {}
 
 impl Staking for DefaultNodeRuntime {}
 
@@ -358,6 +361,8 @@ impl Session for KusamaRuntime {
     type ValidatorId = <Self as System>::AccountId;
     type Keys = SessionKeys;
 }
+
+impl Identity for KusamaRuntime {}
 
 impl Staking for KusamaRuntime {}
 

@@ -16,6 +16,6 @@ pub trait Identity: Balances {}
 /// Information that is pertinent to identify the entity behind an account.
 pub struct IdentityOfStore<T: Identity> {
     #[store(returns = Option<Registration<T::Balance>>)]
-    /// Information concerning the identity of the controller of an account. 
-    pub registration: Registration<T::Balance>,
+    /// Information that is pertinent to identify the entity behind an account.
+    pub account: T::AccountId,
 }
