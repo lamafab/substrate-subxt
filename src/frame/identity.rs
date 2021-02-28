@@ -4,7 +4,11 @@ use super::balances::Balances;
 use codec::Encode;
 
 pub use pallet_identity::{
+    Data,
+    IdentityInfo,
     Registration,
+    RegistrarIndex,
+    Judgement,
 };
 
 /// The subset of the `frame::Trait` that a client must implement.
